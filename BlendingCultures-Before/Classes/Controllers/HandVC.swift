@@ -28,7 +28,6 @@ class HandVC: UITableViewController {
         if hand.numberOfItems < 5 {
             hand.addNewItemAtIndex(0)
             self.insertTopRow()
-            self.tableView.reloadData()
         }
     }
     
@@ -39,7 +38,6 @@ class HandVC: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
@@ -62,9 +60,7 @@ class HandVC: UITableViewController {
         if editingStyle == .Delete {
             hand.deleteCardAtIndex(indexPath.row)
             self.deleteRowAtIndexPath(indexPath)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     
     private func deleteRowAtIndexPath(indexPath: NSIndexPath) {

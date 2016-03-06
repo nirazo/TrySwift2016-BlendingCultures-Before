@@ -29,13 +29,6 @@ class CardCell: UITableViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    func fillWith(card: Card) {
-        rankLabel.textColor = card.color
-        rankLabel.text = card.rank.description
-        suitLabel.textColor = card.color
-        self.updateLayout()
-    }
 
     private func updateLayout() {
         suitLabel.frame = CGRect(x: 100, y: 0, width: 30, height: self.frame.height)
